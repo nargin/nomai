@@ -1,1 +1,1 @@
-![](https://github.com/nargin/nargin/blob/main/image/Solanum.png)
+![](https://github.com/nargin/nomai/blob/main/image/Solanum.png)
