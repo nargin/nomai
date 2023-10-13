@@ -94,7 +94,7 @@ int	accept_client()
 	return (0);
 }
 
-int	remove_client(int socket)
+void	remove_client(int socket)
 {
 	if (clients && clients->socket == socket)
 	{
@@ -104,7 +104,6 @@ int	remove_client(int socket)
 		FD_CLR(tofree->socket, &opened_fd);
 		close(tofree->socket);
 		free(tofree);
-		return (0);
 	}
 	for (t_client *clt = clients; clt; clt = clt->next)
 	{
@@ -116,10 +115,8 @@ int	remove_client(int socket)
 			FD_CLR(tofree->socket, &opened_fd);
 			close(tofree->socket);
 			free(tofree);
-			return (0);
 		}
 	}
-	return (1);
 }
 
 int	process_client(int i)
