@@ -117,10 +117,7 @@ void	handleRequest(int maxFD) {
 	for (int fd = 0; fd <= maxFD; fd++) {
 		if (FD_ISSET(fd, &read_fd) == 0)
 			continue;
-		if (fd == server.socket)
-			return newClient();
-		else
-			return customer(fd);
+		fd == server.socket ? newClient() : customer(fd);
 	}
 }
 
